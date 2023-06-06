@@ -37,7 +37,7 @@ TestSafeInt8ToUint8(
   )
 {
   EFI_STATUS  Status;
-  INT8        Operand;
+  //INT8        Operand;
   UINT8       Result;
   
   Status = SafeInt8ToUint8 (TestBuffer, &Result);
@@ -48,13 +48,58 @@ TestSafeInt8ToUint8(
 }
 
 VOID
+TestSafeInt16ToUint8(
+  IN VOID  *TestBuffer,
+  IN UINTN TestBufferSize
+  )
+{
+  EFI_STATUS  Status;
+  //INT8        Operand;
+  UINT8       Result;
+  
+  Status = SafeInt16ToUint8 (TestBuffer, &Result);
+
+}
+
+VOID
+TestSafeInt32ToUint8(
+  IN VOID  *TestBuffer,
+  IN UINTN TestBufferSize
+  )
+{
+  EFI_STATUS  Status;
+  //INT8        Operand;
+  UINT8       Result;
+  
+  Status = SafeInt32ToUint8 (TestBuffer, &Result);
+
+}
+
+VOID
+TestSafeInt64ToUint8(
+  IN VOID  *TestBuffer,
+  IN UINTN TestBufferSize
+  )
+{
+  EFI_STATUS  Status;
+  //INT8        Operand;
+  UINT8       Result;
+  
+  Status = SafeInt64ToUint8 (TestBuffer, &Result);
+
+}
+
+VOID
 EFIAPI
 RunTestHarness(
   IN VOID  *TestBuffer,
   IN UINTN TestBufferSize
   )
 {
-  FixBuffer(TestBuffer);
+  // FixBuffer(TestBuffer);
   
   TestSafeInt8ToUint8 (TestBuffer, TestBufferSize);
+  TestSafeInt16ToUint8 (TestBuffer, TestBufferSize);
+  TestSafeInt32ToUint8 (TestBuffer, TestBufferSize);
+  TestSafeInt64ToUint8 (TestBuffer, TestBufferSize);
 }
