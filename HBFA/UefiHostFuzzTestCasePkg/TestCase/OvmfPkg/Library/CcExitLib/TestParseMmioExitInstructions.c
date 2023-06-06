@@ -21,6 +21,8 @@
 #include <Library/MemoryAllocationLib.h>
 #include <Library/PcdLib.h>
 #include <Library/CcExitLib.h>
+#include <Library/CcExitLib/CcInstruction.h>
+#include <Library/CcExitLib/CcExitVcHandler.h>
 
 #define GET_GPAW_INIT_STATE(INFO)  ((UINT8) ((INFO) & 0x3f))
 
@@ -71,14 +73,14 @@ GetMaxBufferSize (
   return TOTAL_SIZE;
 }
 
-// typedef struct {
-//   UINT8                   OpCode;
-//   UINT32                  Bytes;
-//   EFI_PHYSICAL_ADDRESS    Address;
-//   UINT64                  Val;
-//   UINT64                  *Register;
-//   UINT32                  ReadOrWrite;
-// } MMIO_EXIT_PARSED_INSTRUCTION;
+typedef struct {
+  UINT8                   OpCode;
+  UINT32                  Bytes;
+  EFI_PHYSICAL_ADDRESS    Address;
+  UINT64                  Val;
+  UINT64                  *Register;
+  UINT32                  ReadOrWrite;
+} MMIO_EXIT_PARSED_INSTRUCTION;
 
 VOID
 EFIAPI

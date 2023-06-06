@@ -356,6 +356,12 @@
    TdxLib|MdePkg/Library/TdxLib/TdxLib.inf  
    PlatformInitLib|OvmfPkg/Library/PlatformInitLib/PlatformInitLib.inf
   }
+  
+  UefiHostFuzzTestCasePkg/TestCase/MdePkg/TestSafeIntLib/TestSafeIntLib.inf {
+  <LibraryClasses>
+   SafeIntLib|MdePkg/Library/BaseSafeIntLib/BaseSafeIntLib.inf
+  }
+  
 
   [PcdsDynamicDefault]
     gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|0
