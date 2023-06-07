@@ -362,6 +362,12 @@
    SafeIntLib|MdePkg/Library/BaseSafeIntLib/BaseSafeIntLib.inf
   }
   
+  UefiHostFuzzTestCasePkg/TestCase/MdePkg/TestSafeString/TestSafeString.inf {
+  <LibraryClasses>
+   BaseLib|MdePkg/Library/BaseLib/BaseLib.inf
+   RegisterFilterLib|MdePkg/Library/RegisterFilterLibNull/RegisterFilterLibNull.inf
+  }
+  
 
   [PcdsDynamicDefault]
     gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|0
